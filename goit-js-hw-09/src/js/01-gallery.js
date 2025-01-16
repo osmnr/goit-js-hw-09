@@ -1,4 +1,6 @@
 import { images } from '../img/images';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+import SimpleLightbox from 'simplelightbox';
 
 const gallery = document.querySelector(".gallery");
 
@@ -21,6 +23,7 @@ const galleryMarkup = images.map(
 
 gallery.innerHTML = galleryMarkup;
 
+
 const img = document.getElementsByTagName("IMG");
 for (var i = 0; i < img.length; i++) {
   // adding event listener to the 'img' to make the size bigger when hovered
@@ -33,6 +36,17 @@ for (var i = 0; i < img.length; i++) {
   });
 }
 
+const mylightbox = new SimpleLightbox('.gallery-item a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
+
+
+
+
+
+
+/*
 
 gallery.addEventListener("click", imageClick);
 
@@ -55,3 +69,5 @@ function imageClick(event) {
   }
   document.addEventListener("keydown", handleKeydown);
 }
+
+*/
