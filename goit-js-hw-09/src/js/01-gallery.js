@@ -23,51 +23,7 @@ const galleryMarkup = images.map(
 
 gallery.innerHTML = galleryMarkup;
 
-
-const img = document.getElementsByTagName("IMG");
-for (var i = 0; i < img.length; i++) {
-  // adding event listener to the 'img' to make the size bigger when hovered
-  img[i].addEventListener("mouseenter", (event) => {
-    event.target.style.transform = "scale(1.04)";
-  });
-  //  adding event listener to the 'img' to remove the changes of the size
-  img[i].addEventListener("mouseleave", (event) => {
-    event.target.style.transform = "scale(1)"; // Reset scale
-  });
-}
-
 const mylightbox = new SimpleLightbox('.gallery-item a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
-
-
-
-
-
-
-/*
-
-gallery.addEventListener("click", imageClick);
-
-function imageClick(event) {
-  event.preventDefault();
-  const imageData = event.target;
-  if (imageData.tagName !== "IMG") return;
-
-  const instance = basicLightbox.create(
-    `<img width="1400" height="900" src="${imageData.dataset.source}">`
-  );
-
-  instance.show();
-  
-  function handleKeydown(event) {
-    if (event.key === "Escape") {
-      instance.close();
-      document.removeEventListener("keydown", handleKeydown);
-    }
-  }
-  document.addEventListener("keydown", handleKeydown);
-}
-
-*/

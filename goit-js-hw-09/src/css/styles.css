@@ -17,3 +17,8 @@
   width: 360px;
   height: 200px;
 }
+
+.back-button, .nav-a {
+  font-size: 22px;
+  text-decoration: none;
+}
